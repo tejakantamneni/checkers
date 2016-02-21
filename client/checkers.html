@@ -1,0 +1,31 @@
+<head>
+  <title>Checkers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Checkers</h1>
+        {{> game}}
+    </div>
+</body>
+
+<template name="game">
+  {{#each game.slots}}
+      {{#if shouldStartNewRow @index}}
+         <div class="row"></div>
+      {{/if}}
+      <span class="slot {{#if isWhite}} white-slot {{else}} black-slot {{/if}}">
+          {{> coinT}}
+      </span>
+  {{/each}}
+</template>
+
+<template name="coinT">
+    {{#if coin.hasCoin}}
+        <img src="/images/{{getCoinIcon coin.isWhite coin.isKing}}" alt="Coin" class="coin">
+    {{else}}
+        <img src="/images/empty.png" alt="Coin" class="coin">
+    {{/if}}
+</template>

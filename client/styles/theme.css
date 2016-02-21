@@ -1,0 +1,56 @@
+body {
+  color: #eee;
+  background: #242424;
+}
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.slot{
+  padding: 10px;
+  display: inline-block;
+  color: teal;
+}
+
+.white-slot{
+  background-color: floralwhite;
+}
+
+.black-slot{
+  background-color: darkgray;
+}
+
+.coin{
+  width: 64px;
+  height: 64px;
+}
+
+.red-border{
+  border: 2px solid darkred;
+}
+
+.row{
+  margin-top: 3px;
+}
+
+.jumbotron {
+  padding: 100px;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.5;
+  color: #222;
+  background-color: #eee;
+  border-radius: 13px;
+  font-family: "Helvetica Neue Ultra Light", "Helvetica Neue", "Arial Narrow", "Arial", sans-serif;
+}
+h1 {
+  line-height: 1;
+}
+p {
+  line-height: 1.4;
+}
+button {
+  background: #eee;
+  padding: 10px 20px;
+}
