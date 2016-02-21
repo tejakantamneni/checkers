@@ -14,11 +14,17 @@ Template.game.events({
             $(event.target).addClass("red-border");
         }else if(Session.get("sel-coin") && !this.coin.hasCoin){
             var sel = Session.get("sel-coin");
-
             Meteor.call("updateCoinPosition", sel.xPos, sel.yPos, this.xPos, this.yPos, sel.coin.isWhite, sel.coin.isKing )
             //delete selection from session and clear decoration
             delete Session.keys['sel-coin']
             $('.container .coin').removeClass("red-border");
+        }else if(Session.get("sel-coin")){
+            var sel = Session.get("sel-coin");
+            if(sel.xPos == this.xPos && sel.yPos == this.yPos){
+                delete Session.keys['sel-coin']
+                $('.container .coin').removeClass("red-border");
+                return;
+            }
         }
 
         //console.log("updating coin [" + this.xPos + ", "+ this.yPos + ", " + this.coin.isWhite + ", " + this.coin.isKing +"]")
